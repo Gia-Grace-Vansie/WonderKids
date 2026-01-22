@@ -1,0 +1,582 @@
+/* ===== BASE STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    width: 100%;
+    max-width: 1100px;
+    min-height: 600px;
+    display: flex;
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* ===== FORM SECTION ===== */
+.form-container {
+    flex: 1;
+    padding: 40px 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 300px;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 800;
+    color: #667eea;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 35px;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* ===== FORM ELEMENTS ===== */
+.input-group {
+    margin-bottom: 20px;
+    animation: slideUp 0.4s ease-out forwards;
+    opacity: 0;
+}
+
+.input-group:nth-child(1) { animation-delay: 0.1s; }
+.input-group:nth-child(2) { animation-delay: 0.2s; }
+.input-group:nth-child(3) { animation-delay: 0.3s; }
+.input-group:nth-child(4) { animation-delay: 0.4s; }
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+input {
+    width: 100%;
+    padding: 15px 18px;
+    border: 2px solid #e1e5eb;
+    border-radius: 12px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background: #f8fafc;
+    color: #333;
+}
+
+input:focus {
+    outline: none;
+    border-color: #667eea;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
+}
+
+input::placeholder {
+    color: #94a3b8;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+    width: 100%;
+    padding: 17px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    letter-spacing: 0.3px;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(102, 126, 234, 0.35);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+/* ===== LINKS ===== */
+.forgot-password {
+    text-align: right;
+    margin: -8px 0 22px 0;
+}
+
+.forgot-password a {
+    color: #667eea;
+    font-size: 13px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.forgot-password a:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
+
+.switch-text {
+    text-align: center;
+    margin-top: 28px;
+    color: #64748b;
+    font-size: 14px;
+    padding-top: 22px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.switch-link {
+    color: #667eea;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 6px;
+    transition: color 0.2s;
+}
+
+.switch-link:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
+
+/* ===== SIDE PANEL ===== */
+.side-panel {
+    flex: 1;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 40px 35px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    min-width: 300px;
+}
+
+.side-panel h2 {
+    color: white;
+    font-size: 38px;
+    margin-bottom: 22px;
+    font-weight: 800;
+    line-height: 1.25;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.side-panel p {
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 35px;
+    opacity: 0.95;
+    max-width: 450px;
+    font-weight: 300;
+}
+
+/* ===== DECORATIVE ELEMENTS ===== */
+.decorative-icons {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.25;
+}
+
+.icon {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    padding: 18px;
+    font-size: 28px;
+    backdrop-filter: blur(8px);
+    animation: float 6s ease-in-out infinite;
+}
+
+.icon:nth-child(1) { 
+    top: 15%; 
+    right: 10%; 
+    animation-delay: 0s; 
+}
+.icon:nth-child(2) { 
+    top: 65%; 
+    right: 8%; 
+    animation-delay: 1.5s; 
+}
+.icon:nth-child(3) { 
+    bottom: 20%; 
+    left: 10%; 
+    animation-delay: 3s; 
+}
+.icon:nth-child(4) { 
+    top: 35%; 
+    left: 8%; 
+    animation-delay: 4.5s; 
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    text-align: center;
+    width: 100%;
+    font-weight: 300;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 95%;
+        min-height: 550px;
+    }
+    
+    .form-container,
+    .side-panel {
+        padding: 35px 30px;
+    }
+    
+    .side-panel h2 {
+        font-size: 32px;
+    }
+    
+    .side-panel p {
+        font-size: 16px;
+    }
+}
+
+/* Mobile Landscape */
+@media (max-width: 900px) and (orientation: landscape) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        min-height: 450px;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+    
+    .form-container,
+    .side-panel {
+        padding: 25px 20px;
+    }
+    
+    .side-panel h2 {
+        font-size: 26px;
+        margin-bottom: 15px;
+    }
+    
+    .side-panel p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+}
+
+/* Mobile Portrait */
+@media (max-width: 768px) {
+    body {
+        padding: 12px;
+        min-height: 100vh;
+        height: auto;
+    }
+    
+    .container {
+        flex-direction: column;
+        max-width: 100%;
+        min-height: auto;
+        margin: 0;
+        border-radius: 16px;
+    }
+    
+    .form-container {
+        padding: 35px 25px;
+        order: 2;
+        width: 100%;
+    }
+    
+    .side-panel {
+        padding: 30px 25px;
+        min-height: 220px;
+        order: 1;
+        width: 100%;
+    }
+    
+    .side-panel h2 {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+    
+    .side-panel p {
+        font-size: 15px;
+        margin-bottom: 20px;
+        max-width: 100%;
+    }
+    
+    .logo {
+        font-size: 28px;
+    }
+    
+    h2 {
+        font-size: 26px;
+    }
+    
+    .decorative-icons {
+        opacity: 0.15;
+    }
+    
+    .icon {
+        padding: 14px;
+        font-size: 24px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        border-radius: 14px;
+    }
+    
+    .form-container {
+        padding: 30px 20px;
+    }
+    
+    .side-panel {
+        padding: 25px 20px;
+        min-height: 200px;
+    }
+    
+    .side-panel h2 {
+        font-size: 24px;
+    }
+    
+    .side-panel p {
+        font-size: 14px;
+    }
+    
+    .logo {
+        font-size: 26px;
+    }
+    
+    h2 {
+        font-size: 24px;
+    }
+    
+    input {
+        padding: 14px 16px;
+        font-size: 14px;
+    }
+    
+    .btn {
+        padding: 16px;
+        font-size: 15px;
+    }
+    
+    .switch-text {
+        font-size: 13px;
+        margin-top: 24px;
+    }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 360px) {
+    .form-container {
+        padding: 25px 18px;
+    }
+    
+    .side-panel {
+        padding: 22px 18px;
+        min-height: 180px;
+    }
+    
+    .side-panel h2 {
+        font-size: 22px;
+    }
+    
+    .side-panel p {
+        font-size: 13px;
+    }
+    
+    .logo {
+        font-size: 24px;
+    }
+    
+    h2 {
+        font-size: 22px;
+        margin-bottom: 25px;
+    }
+    
+    input {
+        padding: 13px 15px;
+    }
+    
+    .btn {
+        padding: 15px;
+    }
+}
+
+/* Prevent zoom on iOS input focus */
+@media screen and (max-width: 768px) {
+    input,
+    select,
+    textarea {
+        font-size: 16px !important;
+    }
+}
+
+/* Fix for very tall screens */
+@media (min-height: 1000px) {
+    .container {
+        max-height: 800px;
+    }
+}
+
+/* Fix for very wide screens */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1200px;
+    }
+}
+
+/* Ensure content never gets too wide */
+@media (min-width: 1600px) {
+    body {
+        padding: 30px;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .btn:hover {
+        transform: none;
+    }
+    
+    input:focus {
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+    }
+    
+    .switch-link:hover,
+    .forgot-password a:hover {
+        color: #667eea;
+        text-decoration: none;
+    }
+}
+
+/* Print styles */
+@media print {
+    .container {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    .side-panel {
+        background: #f0f0f0 !important;
+        color: #333 !important;
+    }
+    
+    .btn {
+        background: #666 !important;
+    }
+}
+
+/* Accessibility: High contrast mode */
+@media (prefers-contrast: high) {
+    .container {
+        border: 2px solid black;
+    }
+    
+    input {
+        border: 2px solid black;
+    }
+    
+    .btn {
+        background: black;
+        color: white;
+    }
+}
+
+/* Accessibility: Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

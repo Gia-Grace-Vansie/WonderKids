@@ -1,0 +1,71 @@
+/* styles/global.css - Global Styles for Fixed Navbar */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding-top: 70px; /* CRITICAL: This prevents content from hiding behind fixed navbar */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+/* Adjust padding for mobile */
+@media (max-width: 768px) {
+  body {
+    padding-top: 64px; /* Matches mobile navbar height */
+  }
+}
+
+/* Remove Bootstrap default body padding if it exists */
+body.modal-open {
+  padding-right: 0 !important;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-padding-top: 80px; /* Accounts for fixed navbar when scrolling to anchors */
+}
+
+/* Remove focus outline for non-keyboard users */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid #4361ee;
+  outline-offset: 2px;
+}
+
+/* Better selection color */
+::selection {
+  background-color: rgba(67, 97, 238, 0.2);
+  color: #1e293b;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

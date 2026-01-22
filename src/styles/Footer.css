@@ -1,0 +1,14 @@
+/* src/styles/Footer.css */
+.footer {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #ffcc66;
+  color: #333;
+  font-family: 'Arial', sans-serif;
+  width: 100%;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.95rem;
+}
